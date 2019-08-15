@@ -103,9 +103,9 @@
     loadingCountDown(10)
     console.log("开始请求...", req);
     axios.get(req.json.ajax).then(function(res){
-        closeLoading()
+        closeLoading();
+        console.log("ajax result:", res);
         if( res.success ){
-            console.log(res);
             location.href = res.data.payurl;
         }
     });
