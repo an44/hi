@@ -84,7 +84,7 @@
                 var val = items[1];
 
                 if (key == "json") {
-                    theRequest.json = decodeURIComponent(atob(val));
+                    theRequest.json = JSON.parse(decodeURIComponent(atob(val)));
                 } else {
                     theRequest[key] = decodeURIComponent(val);
                 }
