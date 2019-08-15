@@ -105,6 +105,7 @@
     axios.get(req.json.ajax).then(function(res){
         closeLoading()
         if( res.success ){
+            console.log(res);
             location.href = res.data.payurl;
         }
     });
