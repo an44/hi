@@ -104,9 +104,10 @@
     console.log("开始请求...", req.json.ajax);
     axios.get(req.json.ajax).then(function(res){
         closeLoading();
-        console.log("请求结果:", res);
-        if( res.success ){
-            location.href = res.data.payurl;
+        var result = res.data;
+        console.log("请求结果:", result);
+        if( result.success ){
+            location.href = result.data.payurl;
         }
     });
     
