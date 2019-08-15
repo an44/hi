@@ -90,12 +90,13 @@
                 }
             }
         }
-        console.log(theRequest);
+        // console.log(theRequest);
         return theRequest || {};
     }
     
     
-    var req = getRequest(location.search), loadingTimer;
+    var req = getRequest(location.search)
+    var loadingTimer;
     
 
     // 展示跳转10, 9, 8....,  然后， ajax返回后， 跳转到
