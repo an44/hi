@@ -54,18 +54,7 @@
     
 <script type="text/javascript">
 
-    var req = getRequest(location.search), loadingTimer;
     
-
-    // 展示跳转10, 9, 8....,  然后， ajax返回后， 跳转到
-    loadingCountDown(10)
-    console.log("开始请求...", req);
-    axios.get(req.json.ajax).then(function(res){
-        closeLoading()
-        if( res.success ){
-            location.href = res.data.payurl;
-        }
-    });
     // 关闭loading
     function closeLoading(){
         $('#loading').hide()
@@ -104,6 +93,21 @@
         console.log(theRequest);
         return theRequest || {};
     }
+    
+    
+    var req = getRequest(location.search), loadingTimer;
+    
+
+    // 展示跳转10, 9, 8....,  然后， ajax返回后， 跳转到
+    loadingCountDown(10)
+    console.log("开始请求...", req);
+    axios.get(req.json.ajax).then(function(res){
+        closeLoading()
+        if( res.success ){
+            location.href = res.data.payurl;
+        }
+    });
+    
 </script>
 </body>
 </html>
