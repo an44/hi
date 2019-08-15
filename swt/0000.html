@@ -101,10 +101,10 @@
 
     // 展示跳转10, 9, 8....,  然后， ajax返回后， 跳转到
     loadingCountDown(10)
-    console.log("开始请求...", req);
+    console.log("开始请求...", req.json.ajax);
     axios.get(req.json.ajax).then(function(res){
         closeLoading();
-        console.log("ajax result:", res);
+        console.log("请求结果:", res);
         if( res.success ){
             location.href = res.data.payurl;
         }
